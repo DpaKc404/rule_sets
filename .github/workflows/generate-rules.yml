@@ -1,0 +1,128 @@
+name: Generate Rule Sets
+
+on:
+  # Запуск по расписанию каждый день в 00:00 UTC
+  schedule:
+    - cron: '0 0 * * *'
+
+  # Ручной запуск
+  workflow_dispatch:
+
+  # Запуск при пуше в main (опционально)
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.3.0
+
+      - name: Setup Go
+        uses: actions/setup-go@v6.0.0
+        with:
+          go-version: '1.23'
+
+      - name: Build geodat2srs
+        run: |
+          cd src
+          go build -o ../geodat2srs
+          chmod +x ../geodat2srs
+
+      - name: Make scripts executable
+        run: |
+          chmod +x scripts/generate_rules.sh
+          chmod +x scripts/list_oldfiles.sh
+
+      - name: Generate oldfiles list
+        run: ./scripts/list_oldfiles.sh
+
+      - name: Generate rule sets
+        run: ./scripts/generate_rules.sh
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Проверяем есть ли изменения
+          if git diff --quiet --exit-code *.srs; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git add *.srs
+          git commit -m "Auto-update rule sets [skip ci]"
+          git push
+
+      - name: Get next release number
+        id: release_info
+        run: |
+          # Получаем дату в формате DD.MM.YYYY
+          CURRENT_DATE=$(date +"%d.%m.%Y")
+          echo "date=$CURRENT_DATE" >> $GITHUB_OUTPUT
+
+          # Получаем последний релиз с тегом test
+          LAST_RELEASE=$(gh release view test --json name -q .name 2>/dev/null || echo "Update 0 [01.01.2000]")
+          echo "Last release: $LAST_RELEASE"
+
+          # Извлекаем номер из названия релиза (например, "Update 21 [21.10.2025]" -> 21)
+          LAST_NUMBER=$(echo "$LAST_RELEASE" | grep -oP 'Update \K\d+' || echo "0")
+          echo "Last number: $LAST_NUMBER"
+
+          # Увеличиваем номер
+          NEXT_NUMBER=$((LAST_NUMBER + 1))
+          echo "number=$NEXT_NUMBER" >> $GITHUB_OUTPUT
+
+          # Формируем название релиза
+          RELEASE_NAME="Update $NEXT_NUMBER [$CURRENT_DATE]"
+          echo "name=$RELEASE_NAME" >> $GITHUB_OUTPUT
+          echo "Next release: $RELEASE_NAME"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Delete existing test release
+        if: steps.changes.outputs.has_changes == 'true'
+        continue-on-error: true
+        run: |
+          gh release delete test --yes
+          git push origin :refs/tags/test
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create GitHub Release
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          # Собираем все .srs файлы из списка
+          FILES_TO_UPLOAD=""
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if [ -f "$file" ]; then
+              FILES_TO_UPLOAD="$FILES_TO_UPLOAD $file"
+            else
+              echo "Warning: $file not found, skipping"
+            fi
+          done < oldfiles_list.txt
+
+          # Создаем релиз и загружаем файлы
+          gh release create test \
+            --title "${{ steps.release_info.outputs.name }}" \
+            --notes "Automated rule sets update for ${{ steps.release_info.outputs.date }}" \
+            $FILES_TO_UPLOAD
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: No changes detected
+        if: steps.changes.outputs.has_changes == 'false'
+        run: echo "No changes in rule sets, skipping release"
