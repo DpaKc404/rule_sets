@@ -1,1 +1,5 @@
 500.json
+h.cmd
+*.srs
+temp_build/
+geodat2srs

@@ -47,32 +47,6 @@ jobs:
       - name: Generate rule sets
         run: ./scripts/generate_rules.sh
 
-      - name: Check for changes
-        id: changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Добавляем .srs файлы для проверки
-          git add *.srs || true
-
-          # Проверяем есть ли изменения (включая новые файлы)
-          if git diff --cached --quiet; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected:"
-            git diff --cached --stat
-          fi
-
-      - name: Commit and push changes
-        if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          git add *.srs
-          git commit -m "Auto-update rule sets [skip ci]"
-          git push
-
       - name: Get next release number
         id: release_info
         run: |
@@ -100,7 +74,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Delete existing test release
-        if: steps.changes.outputs.has_changes == 'true'
         continue-on-error: true
         run: |
           gh release delete test --yes
@@ -109,7 +82,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Create GitHub Release
-        if: steps.changes.outputs.has_changes == 'true'
         run: |
           # Собираем все .srs файлы из списка
           FILES_TO_UPLOAD=""
@@ -129,7 +101,3 @@ jobs:
             $FILES_TO_UPLOAD
         env:
           GH_TOKEN: ${{ github.token }}
-
-      - name: No changes detected
-        if: steps.changes.outputs.has_changes == 'false'
-        run: echo "No changes in rule sets, skipping release"
