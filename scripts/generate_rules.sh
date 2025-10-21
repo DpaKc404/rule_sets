@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -o pipefail
 
 # Скрипт для генерации .srs файлов из .dat источников
 # Аналог h.cmd для Linux
@@ -130,6 +130,9 @@ readarray -t FILES < "$FILES_LIST"
 COPIED=0
 MISSING=0
 
+# Временно отключаем set -e для этой секции
+set +e
+
 for file in "${FILES[@]}"; do
     # Пропускаем пустые строки
     [ -z "$file" ] && continue
@@ -144,30 +147,28 @@ for file in "${FILES[@]}"; do
 
     # Ищем файл в соответствующей директории
     if [[ $file == v2fly_geoip-* ]] && [ -f "GeoIP V2Fly/$file" ]; then
-        cp "GeoIP V2Fly/$file" "$PROJECT_ROOT/"
-        FOUND=true
+        cp "GeoIP V2Fly/$file" "$PROJECT_ROOT/" && FOUND=true
     elif [[ $file == zkeen_geoip-* ]] && [ -f "GeoIP ZkeenIP/$file" ]; then
-        cp "GeoIP ZkeenIP/$file" "$PROJECT_ROOT/"
-        FOUND=true
+        cp "GeoIP ZkeenIP/$file" "$PROJECT_ROOT/" && FOUND=true
     elif [[ $file == geosite-antifilter* ]] && [ -f "GeoSite AntiFilter/$file" ]; then
-        cp "GeoSite AntiFilter/$file" "$PROJECT_ROOT/"
-        FOUND=true
+        cp "GeoSite AntiFilter/$file" "$PROJECT_ROOT/" && FOUND=true
     elif [[ $file == v2fly_geosite-* ]] && [ -f "GeoSite V2Fly/$file" ]; then
-        cp "GeoSite V2Fly/$file" "$PROJECT_ROOT/"
-        FOUND=true
+        cp "GeoSite V2Fly/$file" "$PROJECT_ROOT/" && FOUND=true
     elif [[ $file == zkeen_geosite-* ]] && [ -f "GeoSite Zkeen/$file" ]; then
-        cp "GeoSite Zkeen/$file" "$PROJECT_ROOT/"
-        FOUND=true
+        cp "GeoSite Zkeen/$file" "$PROJECT_ROOT/" && FOUND=true
     fi
 
     if [ "$FOUND" = true ]; then
         echo "✓ $file"
-        ((COPIED++))
+        COPIED=$((COPIED + 1))
     else
         echo "✗ $file (not found)"
-        ((MISSING++))
+        MISSING=$((MISSING + 1))
     fi
 done
+
+# Включаем обратно set -e
+set -e
 
 echo ""
 echo "=== Creating additional copies ==="
@@ -177,14 +178,14 @@ echo ""
 if [ -f "$PROJECT_ROOT/zkeen_geoip-ru.srs" ]; then
     cp "$PROJECT_ROOT/zkeen_geoip-ru.srs" "$PROJECT_ROOT/zkeen_geoip-ru_second.srs"
     echo "✓ Created zkeen_geoip-ru_second.srs"
-    ((COPIED++))
+    COPIED=$((COPIED + 1))
 
     cp "$PROJECT_ROOT/zkeen_geoip-ru.srs" "$PROJECT_ROOT/zkeen_geoip-ru_torrent.srs"
     echo "✓ Created zkeen_geoip-ru_torrent.srs"
-    ((COPIED++))
+    COPIED=$((COPIED + 1))
 else
     echo "✗ zkeen_geoip-ru.srs not found, cannot create copies"
-    ((MISSING+=2))
+    MISSING=$((MISSING + 2))
 fi
 
 echo ""
