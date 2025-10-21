@@ -37,15 +37,17 @@ jobs:
           chmod +x ../geodat2srs
 
       - name: Make scripts executable
-        run: |
-          chmod +x scripts/generate_rules.sh
-          chmod +x scripts/list_oldfiles.sh
-
-      - name: Generate oldfiles list
-        run: ./scripts/list_oldfiles.sh
+        run: chmod +x scripts/generate_rules.sh
 
       - name: Generate rule sets
         run: ./scripts/generate_rules.sh
+
+      - name: Verify generated files
+        run: |
+          echo "Generated .srs files:"
+          ls -1 *.srs | tee generated_files.txt
+          echo ""
+          echo "Total files: $(ls -1 *.srs | wc -l)"
 
       - name: Get next release number
         id: release_info
@@ -83,16 +85,11 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          # Собираем все .srs файлы из списка
-          FILES_TO_UPLOAD=""
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            if [ -f "$file" ]; then
-              FILES_TO_UPLOAD="$FILES_TO_UPLOAD $file"
-            else
-              echo "Warning: $file not found, skipping"
-            fi
-          done < oldfiles_list.txt
+          # Собираем все .srs файлы
+          FILES_TO_UPLOAD=$(ls -1 *.srs | tr '\n' ' ')
+
+          echo "Uploading files to release:"
+          echo "$FILES_TO_UPLOAD"
 
           # Создаем релиз и загружаем файлы
           gh release create test \

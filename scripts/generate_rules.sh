@@ -116,14 +116,13 @@ echo ""
 # --- Copy selected files to project root ---
 
 # Проверяем наличие файла со списком
-FILES_LIST="$PROJECT_ROOT/oldfiles_list.txt"
+FILES_LIST="$PROJECT_ROOT/filelist.txt"
 if [ ! -f "$FILES_LIST" ]; then
     echo "Error: $FILES_LIST not found"
-    echo "Please run: $PROJECT_ROOT/scripts/list_oldfiles.sh"
     exit 1
 fi
 
-# Читаем список файлов из oldfiles_list.txt
+# Читаем список файлов из filelist.txt
 readarray -t FILES < "$FILES_LIST"
 
 # Копируем файлы из соответствующих папок
