@@ -34,6 +34,15 @@ v2fly_geosite-easylist.srs
 v2fly_geosite-adblock.srs
 v2fly_geosite-adblockplus.srs
 v2fly_geosite-perplexity.srs
+v2fly_geosite-adguard.srs
+v2fly_geosite-asus.srs
+v2fly_geosite-asus@cn.srs
+v2fly_geosite-azure.srs
+v2fly_geosite-azure@cn.srs
+v2fly_geosite-aws.srs
+v2fly_geosite-aws@cn.srs
+v2fly_geosite-aws-cn.srs
+v2fly_geosite-aws-cn@cn.srs
 zkeen_geoip-akamai.srs
 zkeen_geoip-amazon.srs
 zkeen_geoip-cdn77.srs
