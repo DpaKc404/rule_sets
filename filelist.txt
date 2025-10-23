@@ -30,6 +30,7 @@ v2fly_geosite-steamunlocked.srs
 v2fly_geosite-telegram.srs
 v2fly_geosite-tiktok.srs
 v2fly_geosite-whatsapp.srs
+v2fly_geosite-easylist.srs
 zkeen_geoip-akamai.srs
 zkeen_geoip-amazon.srs
 zkeen_geoip-cdn77.srs
