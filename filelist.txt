@@ -71,3 +71,4 @@ zkeen_geosite-youtube.srs
 metacx_geoip-cloudflare.srs
 metacx_geoip-cloudfront.srs
 metacx_geoip-telegram.srs
+metacx_geoip-fastly.srs
