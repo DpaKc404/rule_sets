@@ -27,6 +27,7 @@ v2fly_geosite-speedtest.srs
 v2fly_geosite-steam@cn.srs
 v2fly_geosite-steam.srs
 v2fly_geosite-steamunlocked.srs
+v2fly_geosite-ea.srs
 v2fly_geosite-telegram.srs
 v2fly_geosite-tiktok.srs
 v2fly_geosite-whatsapp.srs
