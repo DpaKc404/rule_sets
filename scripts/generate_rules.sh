@@ -47,6 +47,11 @@ mkdir -p Zkeen
 curl -L -o Zkeen/zkeen.dat https://github.com/jameszeroX/zkeen-domains/releases/latest/download/zkeen.dat
 curl -L -o Zkeen/zkeenip.dat https://github.com/jameszeroX/zkeen-ip/releases/latest/download/zkeenip.dat
 
+# MetaCubeX
+echo "Downloading MetaCubeX..."
+mkdir -p MetaCubeX
+curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+
 echo ""
 echo "=== Converting .dat to .srs ==="
 echo ""
@@ -67,6 +72,10 @@ $GEODAT2SRS geoip -i V2Fly/geoip.dat -o "GeoIP V2Fly" --prefix "geoip-"
 echo "Processing Zkeen..."
 $GEODAT2SRS geosite -i Zkeen/zkeen.dat -o "GeoSite Zkeen" --prefix "geosite-"
 $GEODAT2SRS geoip -i Zkeen/zkeenip.dat -o "GeoIP ZkeenIP" --prefix "geoip-"
+
+# MetaCubeX
+echo "Processing MetaCubeX..."
+$GEODAT2SRS geoip -i MetaCubeX/geoip.dat -o "GeoIP MetaCubeX" --prefix "geoip-"
 
 echo ""
 echo "=== Cleaning up temp files ==="
@@ -106,6 +115,13 @@ cd ..
 cd "GeoSite Zkeen"
 for file in geosite-*.srs; do
     [ -f "$file" ] && mv "$file" "zkeen_$file"
+done
+cd ..
+
+# GeoIP MetaCubeX
+cd "GeoIP MetaCubeX"
+for file in geoip-*.srs; do
+    [ -f "$file" ] && mv "$file" "metacx_$file"
 done
 cd ..
 
