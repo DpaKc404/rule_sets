@@ -41,6 +41,7 @@
 - **GeoIP** - правила на основе IP адресов
   - `v2fly_geoip-*` - IP диапазоны (cloudflare, google, ru и т.д.)
   - `zkeen_geoip-*` - расширенные IP правила (CDN, хостинги, сервисы)
+  - `metacubex_geoip-*` - дополнительные IP правила таких как cloudflare, google, telegram, netflix, twitter и другие. (MetaCubeX источник)
 
 - **GeoSite** - правила на основе доменов
   - `v2fly_geosite-*` - категории доменов (ads, social, gov-ru и т.д.)
@@ -80,3 +81,4 @@ go build -o ../geodat2srs
 - [V2Ray Rules Dat](https://github.com/loyalsoldier/v2ray-rules-dat)
 - [Zkeen Domains](https://github.com/jameszeroX/zkeen-domains)
 - [Zkeen IP](https://github.com/jameszeroX/zkeen-ip)
+- [MetaCubeX Meta Rules Dat](https://github.com/MetaCubeX/meta-rules-dat)
