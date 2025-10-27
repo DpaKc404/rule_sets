@@ -68,3 +68,4 @@ zkeen_geosite-domains.srs
 zkeen_geosite-other.srs
 zkeen_geosite-politic.srs
 zkeen_geosite-youtube.srs
+metacx_geoip-cloudflare.srs
