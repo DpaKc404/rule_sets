@@ -73,3 +73,8 @@ metacx_geoip-cloudflare.srs
 metacx_geoip-cloudfront.srs
 metacx_geoip-telegram.srs
 metacx_geoip-fastly.srs
+metacx_geoip-ru.srs
+v2fly_geosite-cloudflare@cn.srs
+v2fly_geosite-cloudflare-cn.srs
+v2fly_geosite-cloudflare-cn@cn.srs
+v2fly_geosite-akamai@cn.srs
