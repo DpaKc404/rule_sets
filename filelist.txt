@@ -85,7 +85,7 @@ v2fly_geosite-amazon-ads.srs
 v2fly_geosite-amazon-ads@ads.srs
 v2fly_geosite-amazontrust.srs
 v2fly_geosite-cdn77.srs
-digitalocean.srs
+v2fly_geosite-digitalocean.srs
 v2fly_geosite-fastly.srs
 v2fly_geosite-hetzner.srs
 v2fly_geosite-vultr.srs
