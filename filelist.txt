@@ -62,12 +62,15 @@ zkeen_geoip-fastly.srs
 metacx_geoip-fastly.srs
 v2fly_geosite-fastly.srs
 zkeen_geoip-gcore.srs
+zkeen_geoip-gcore.srs
+v2fly_geosite-gcores.srs
 zkeen_geoip-google.srs
 zkeen_geoip-hetzner.srs
 v2fly_geosite-hetzner.srs
 zkeen_geoip-linode.srs
 zkeen_geoip-mega.srs
 zkeen_geoip-meta.srs
+v2fly_geosite-meta.srs
 zkeen_geoip-ovh.srs
 zkeen_geoip-vultr.srs
 v2fly_geosite-vultr.srs
