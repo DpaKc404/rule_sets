@@ -78,3 +78,9 @@ v2fly_geosite-cloudflare@cn.srs
 v2fly_geosite-cloudflare-cn.srs
 v2fly_geosite-cloudflare-cn@cn.srs
 v2fly_geosite-akamai@cn.srs
+v2fly_geosite-amazon.srs
+v2fly_geosite-amazon@ads.srs
+v2fly_geosite-amazon@cn.srs
+v2fly_geosite-amazon-ads.srs
+v2fly_geosite-amazon-ads@ads.srs
+v2fly_geosite-amazontrust.srs
