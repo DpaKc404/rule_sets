@@ -1,14 +1,11 @@
 v2fly_geosite-category-ads-all.srs
 zkeen_geoip-ru.srs
 metacx_geoip-ru.srs
-v2fly_geosite-steam.srs
-v2fly_geosite-steam@cn.srs
 v2fly_geosite-ea.srs
 v2fly_geoip-ru.srs
 v2fly_geosite-category-ru.srs
 v2fly_geosite-category-gov-ru.srs
 zkeen_geoip-cloudflare.srs
-metacx_geoip-cloudflare.srs
 v2fly_geoip-cloudflare.srs
 v2fly_geosite-cloudflare.srs
 v2fly_geosite-cloudflare@cn.srs
@@ -31,10 +28,6 @@ v2fly_geosite-google.srs
 v2fly_geosite-speedtest.srs
 v2fly_geosite-tiktok.srs
 v2fly_geosite-whatsapp.srs
-v2fly_geosite-easylist.srs
-v2fly_geosite-adblock.srs
-v2fly_geosite-adblockplus.srs
-v2fly_geosite-adguard.srs
 v2fly_geosite-asus.srs
 v2fly_geosite-asus@cn.srs
 v2fly_geosite-perplexity.srs
@@ -69,7 +62,6 @@ v2fly_geosite-hetzner.srs
 zkeen_geoip-linode.srs
 zkeen_geoip-mega.srs
 zkeen_geoip-meta.srs
-v2fly_geosite-meta.srs
 zkeen_geoip-ovh.srs
 zkeen_geoip-vultr.srs
 v2fly_geosite-vultr.srs
