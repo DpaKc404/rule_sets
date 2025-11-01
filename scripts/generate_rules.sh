@@ -187,28 +187,6 @@ done
 # Включаем обратно set -e
 set -e
 
-echo ""
-echo "=== Creating additional copies ==="
-echo ""
-
-# Создаем дополнительные копии zkeen_geoip-ru.srs
-if [ -f "$PROJECT_ROOT/zkeen_geoip-ru.srs" ]; then
-    cp "$PROJECT_ROOT/zkeen_geoip-ru.srs" "$PROJECT_ROOT/zkeen_geoip-ru_second.srs"
-    echo "✓ Created zkeen_geoip-ru_second.srs"
-    COPIED=$((COPIED + 1))
-
-    cp "$PROJECT_ROOT/zkeen_geoip-ru.srs" "$PROJECT_ROOT/zkeen_geoip-ru_torrent.srs"
-    echo "✓ Created zkeen_geoip-ru_torrent.srs"
-    COPIED=$((COPIED + 1))
-else
-    echo "✗ zkeen_geoip-ru.srs not found, cannot create copies"
-    MISSING=$((MISSING + 2))
-fi
-
-echo ""
-echo "=== Cleanup ==="
-echo ""
-
 # Удаляем рабочую директорию
 cd "$PROJECT_ROOT"
 rm -rf "$WORK_DIR"
