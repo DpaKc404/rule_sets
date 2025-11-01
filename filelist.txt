@@ -1,6 +1,5 @@
 v2fly_geosite-category-ads-all.srs
 zkeen_geoip-ru.srs
-metacx_geoip-ru.srs
 v2fly_geosite-ea.srs
 v2fly_geoip-ru.srs
 v2fly_geosite-category-ru.srs
