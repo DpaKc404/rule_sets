@@ -74,3 +74,4 @@ v2fly_geosite-aws.srs
 v2fly_geosite-aws@cn.srs
 v2fly_geosite-aws-cn.srs
 v2fly_geosite-aws-cn@cn.srs
+metacx_geoip-ru.srs
