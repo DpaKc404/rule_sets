@@ -75,3 +75,4 @@ v2fly_geosite-aws@cn.srs
 v2fly_geosite-aws-cn.srs
 v2fly_geosite-aws-cn@cn.srs
 metacx_geoip-ru.srs
+v2fly_geosite-category-public-tracker.srs
