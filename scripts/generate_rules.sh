@@ -50,7 +50,7 @@ curl -L -o Zkeen/zkeenip.dat https://github.com/jameszeroX/zkeen-ip/releases/lat
 # MetaCubeX
 echo "Downloading MetaCubeX..."
 mkdir -p MetaCubeX
-curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+curl -L -o MetaCubeX/geosite.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
 curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
 
 echo ""
