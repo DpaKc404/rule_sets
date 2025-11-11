@@ -76,3 +76,6 @@ v2fly_geosite-aws-cn.srs
 v2fly_geosite-aws-cn@cn.srs
 metacx_geoip-ru.srs
 v2fly_geosite-category-public-tracker.srs
+v2fly_geosite-oracle.srs
+v2fly_geosite-supercell.srs
+metacx_geoip-oracle.srs
