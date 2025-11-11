@@ -50,6 +50,7 @@ curl -L -o Zkeen/zkeenip.dat https://github.com/jameszeroX/zkeen-ip/releases/lat
 # MetaCubeX
 echo "Downloading MetaCubeX..."
 mkdir -p MetaCubeX
+curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
 curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
 
 echo ""
@@ -75,6 +76,7 @@ $GEODAT2SRS geoip -i Zkeen/zkeenip.dat -o "GeoIP ZkeenIP" --prefix "geoip-"
 
 # MetaCubeX
 echo "Processing MetaCubeX..."
+$GEODAT2SRS geoip -i MetaCubeX/geosite.dat -o "GeoSite MetaCubeX" --prefix "geosite-"
 $GEODAT2SRS geoip -i MetaCubeX/geoip.dat -o "GeoIP MetaCubeX" --prefix "geoip-"
 
 echo ""
@@ -121,6 +123,13 @@ cd ..
 # GeoIP MetaCubeX
 cd "GeoIP MetaCubeX"
 for file in geoip-*.srs; do
+    [ -f "$file" ] && mv "$file" "metacx_$file"
+done
+cd ..
+
+# GeoSite MetaCubeX
+cd "GeoSite MetaCubeX"
+for file in geosite-*.srs; do
     [ -f "$file" ] && mv "$file" "metacx_$file"
 done
 cd ..
