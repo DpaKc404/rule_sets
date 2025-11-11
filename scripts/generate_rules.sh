@@ -53,27 +53,8 @@ mkdir -p MetaCubeX
 curl -L -o MetaCubeX/geosite.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
 curl -L -o MetaCubeX/geoip.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
 
-# Iran-sing-box-rules (Chocolate4U)
-echo "Downloading Iran-sing-box-rules (Chocolate4U)..."
-mkdir -p IranBox
-
-# Получаем JSON последнего релиза
-IRAN_JSON=$(curl -s https://api.github.com/repos/Chocolate4U/Iran-sing-box-rules/releases/latest)
-
-# Парсим URL для geosite.db и geoip.db из JSON
-IRAN_GEOSITE_URL=$(echo "$IRAN_JSON" | grep '"browser_download_url":.*geosite.db' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
-IRAN_GEOIP_URL=$(echo "$IRAN_JSON" | grep '"browser_download_url":.*geoip.db' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
-
-if [ -z "$IRAN_GEOSITE_URL" ] || [ -z "$IRAN_GEOIP_URL" ]; then
-    echo "Ошибка: Не удалось найти ссылки на geosite.db и geoip.db в последнем релизе Chocolate4U/Iran-sing-box-rules"
-    exit 1
-fi
-
-curl -L -o Chocolate4U/geosite.db "$IRAN_GEOSITE_URL"
-curl -L -o Chocolate4U/geoip.db "$IRAN_GEOIP_URL"
-
 echo ""
-echo "=== Converting .db, .dat to .srs ==="
+echo "=== Converting .dat to .srs ==="
 echo ""
 
 # --- Unpack files ---
@@ -97,11 +78,6 @@ $GEODAT2SRS geoip -i Zkeen/zkeenip.dat -o "GeoIP ZkeenIP" --prefix "geoip-"
 echo "Processing MetaCubeX..."
 $GEODAT2SRS geosite -i MetaCubeX/geosite.dat -o "GeoSite MetaCubeX" --prefix "geosite-"
 $GEODAT2SRS geoip -i MetaCubeX/geoip.dat -o "GeoIP MetaCubeX" --prefix "geoip-"
-
-# Chocolate4U
-echo "Processing Chocolate4U..."
-$GEODAT2SRS geosite -i Chocolate4U/geosite.db -o "GeoSite Chocolate4U" --prefix "geosite-"
-$GEODAT2SRS geoip -i Chocolate4U/geoip.db -o "GeoIP Chocolate4U" --prefix "geoip-"
 
 echo ""
 echo "=== Cleaning up temp files ==="
