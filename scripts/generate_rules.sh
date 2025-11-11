@@ -132,6 +132,7 @@ cd "GeoSite MetaCubeX"
 for file in geosite-*.srs; do
     [ -f "$file" ] && mv "$file" "metacx_$file"
 done
+cd ..
 
 echo ""
 echo "=== Copying selected files to root ==="
