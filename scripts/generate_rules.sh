@@ -76,7 +76,7 @@ $GEODAT2SRS geoip -i Zkeen/zkeenip.dat -o "GeoIP ZkeenIP" --prefix "geoip-"
 
 # MetaCubeX
 echo "Processing MetaCubeX..."
-$GEODAT2SRS geoip -i MetaCubeX/geosite.dat -o "GeoSite MetaCubeX" --prefix "geosite-"
+$GEODAT2SRS geosite -i MetaCubeX/geosite.dat -o "GeoSite MetaCubeX" --prefix "geosite-"
 $GEODAT2SRS geoip -i MetaCubeX/geoip.dat -o "GeoIP MetaCubeX" --prefix "geoip-"
 
 echo ""
