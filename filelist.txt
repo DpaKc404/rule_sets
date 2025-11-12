@@ -1,3 +1,7 @@
+### AntiFilter_GEOSITE ###
+geosite-antifilter.srs
+geosite-antifilter-community.srs
+
 ### V2fly_GEOIP ###
 v2fly_geoip-cloudflare.srs
 v2fly_geoip-google.srs
