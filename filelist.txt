@@ -1,7 +1,6 @@
 v2fly_geosite-category-ads-all.srs
 v2fly_geosite-category-public-tracker.srs
-metacx_geoip-ru_udp.srs
-metacx_geoip-ru_tcp.srs
+metacx_geoip-ru.srs
 v2fly_geosite-steam.srs
 v2fly_geosite-ea.srs
 zkeen_geoip-ru.srs
