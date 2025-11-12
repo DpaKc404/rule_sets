@@ -30,7 +30,6 @@ v2fly_geosite-speedtest.srs
 v2fly_geosite-tiktok.srs
 v2fly_geosite-whatsapp.srs
 v2fly_geosite-asus.srs
-v2fly_geosite-asus@cn.srs
 v2fly_geosite-perplexity.srs
 v2fly_geosite-category-media-ru.srs
 geosite-antifilter.srs
