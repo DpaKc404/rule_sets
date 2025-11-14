@@ -11,10 +11,6 @@ v2fly_geoip-cloudfront.srs
 ### V2fly_GEOSITE ###
 v2fly_geosite-category-ads-all.srs
 v2fly_geosite-category-public-tracker.srs
-v2fly_geosite-steam.srs
-v2fly_geosite-ea.srs
-v2fly_geosite-category-ru.srs
-v2fly_geosite-category-gov-ru.srs
 v2fly_geosite-cloudflare.srs
 v2fly_geosite-cloudflare-cn.srs
 v2fly_geosite-cloudflare-ipfs.srs
@@ -31,22 +27,26 @@ v2fly_geosite-whatsapp.srs
 v2fly_geosite-asus.srs
 v2fly_geosite-perplexity.srs
 v2fly_geosite-category-media-ru.srs
+v2fly_geosite-steam.srs
+v2fly_geosite-ea.srs
+v2fly_geosite-category-ru.srs
+v2fly_geosite-category-gov-ru.srs
 v2fly_geosite-private.srs
 v2fly_geosite-amazon.srs
 v2fly_geosite-amazontrust.srs
+v2fly_geosite-aws.srs
 v2fly_geosite-akamai.srs
 v2fly_geosite-discord.srs
 v2fly_geosite-telegram.srs
 v2fly_geosite-cdn77.srs
 v2fly_geosite-digitalocean.srs
 v2fly_geosite-fastly.srs
-v2fly_geosite-gcores.srs
 v2fly_geosite-hetzner.srs
 v2fly_geosite-vultr.srs
 v2fly_geosite-azure.srs
-v2fly_geosite-aws.srs
 v2fly_geosite-oracle.srs
-v2fly_geosite-supercell.srs
+v2fly_geosite-xbox.srs
+v2fly_geosite-microsoft.srs
 
 ### MetaCX_GEOIP ###
 metacx_geoip-ru.srs
@@ -62,7 +62,6 @@ zkeen_geosite-other.srs
 zkeen_geosite-politic.srs
 
 ### Zkeen_GEOIP ###
-zkeen_geoip-ru.srs
 zkeen_geoip-cloudflare.srs
 zkeen_geoip-youtube.srs
 zkeen_geoip-amazon.srs
@@ -73,7 +72,6 @@ zkeen_geoip-cdn77.srs
 zkeen_geoip-digitalocean.srs
 zkeen_geoip-fastly.srs
 zkeen_geoip-gcore.srs
-zkeen_geoip-google.srs
 zkeen_geoip-hetzner.srs
 zkeen_geoip-linode.srs
 zkeen_geoip-mega.srs
