@@ -45,8 +45,6 @@ v2fly_geosite-hetzner.srs
 v2fly_geosite-vultr.srs
 v2fly_geosite-azure.srs
 v2fly_geosite-oracle.srs
-v2fly_geosite-xbox.srs
-v2fly_geosite-microsoft.srs
 
 ### MetaCX_GEOIP ###
 metacx_geoip-ru.srs
