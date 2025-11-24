@@ -182,6 +182,8 @@ for file in "${FILES[@]}"; do
         cp "GeoSite Zkeen/$file" "$PROJECT_ROOT/" && FOUND=true
     elif [[ $file == metacx_geoip-* ]] && [ -f "GeoIP MetaCubeX/$file" ]; then
         cp "GeoIP MetaCubeX/$file" "$PROJECT_ROOT/" && FOUND=true
+    elif [[ $file == metacx_geosite-* ]] && [ -f "GeoIP MetaCubeX/$file" ]; then
+        cp "GeoIP MetaCubeX/$file" "$PROJECT_ROOT/" && FOUND=true
     fi
 
     if [ "$FOUND" = true ]; then
