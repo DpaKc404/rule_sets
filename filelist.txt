@@ -9,7 +9,7 @@ metacx_geoip-google.srs
 metacx_geoip-private.srs
 metacx_geoip-ru.srs
 metacx_geoip-telegram.srs
-metacx_geoip-fastly
+metacx_geoip-fastly.srs
 
 ### MetaCX_GEOSITE ###
 metacx_geosite-akamai.srs
