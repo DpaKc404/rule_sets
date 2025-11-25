@@ -80,3 +80,4 @@ zkeen_geoip-vultr.srs
 zkeen_geoip-contabo.srs
 zkeen_geoip-scaleway.srs
 zkeen_geoip-colocrossing.srs
+zkeen_geoip-oracle.srs
