@@ -324,25 +324,25 @@ echo "=== Creating additional copies ==="
 
 echo ""
 
-# Создаем дополнительные копии metacx_geoip-ru.srs
+# Создаем дополнительные копии v2fly_geoip-ru.srs
 
-if [ -f "$PROJECT_ROOT/metacx_geoip-ru.srs" ]; then
+if [ -f "$PROJECT_ROOT/v2fly_geoip-ru.srs" ]; then
 
-cp "$PROJECT_ROOT/metacx_geoip-ru.srs" "$PROJECT_ROOT/metacx_geoip-ru_tcp.srs"
+cp "$PROJECT_ROOT/v2fly_geoip-ru.srs" "$PROJECT_ROOT/v2fly_geoip-ru_tcp.srs"
 
-echo "✓ Created metacx_geoip-ru_tcp.srs"
+echo "✓ Created v2fly_geoip-ru_tcp.srs"
 
 COPIED=$((COPIED + 1))
 
-cp "$PROJECT_ROOT/metacx_geoip-ru.srs" "$PROJECT_ROOT/metacx_geoip-ru_udp.srs"
+cp "$PROJECT_ROOT/v2fly_geoip-ru.srs" "$PROJECT_ROOT/v2fly_geoip-ru_udp.srs"
 
-echo "✓ Created metacx_geoip-ru_udp.srs"
+echo "✓ Created v2fly_geoip-ru_udp.srs"
 
 COPIED=$((COPIED + 1))
 
 else
 
-echo "✗ metacx_geoip-ru.srs not found, cannot create copies"
+echo "✗ v2fly_geoip-ru.srs not found, cannot create copies"
 
 MISSING=$((MISSING + 2))
 
