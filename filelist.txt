@@ -77,3 +77,6 @@ zkeen_geoip-mega.srs
 zkeen_geoip-meta.srs
 zkeen_geoip-ovh.srs
 zkeen_geoip-vultr.srs
+zkeen_geoip-contabo.srs
+zkeen_geoip-scaleway.srs
+zkeen_geoip-colocrossing.srs
