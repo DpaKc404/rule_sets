@@ -3,6 +3,7 @@ geosite-antifilter-community.srs
 geosite-antifilter.srs
 
 ### V2fly_GEOIP ###
+v2fly_geoip-ru.srs
 v2fly_geoip-cloudflare.srs
 v2fly_geoip-cloudfront.srs
 v2fly_geoip-telegram.srs
