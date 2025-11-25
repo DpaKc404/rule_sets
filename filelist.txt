@@ -48,6 +48,7 @@ v2fly_geosite-telegram.srs
 v2fly_geosite-tiktok.srs
 v2fly_geosite-vultr.srs
 v2fly_geosite-whatsapp.srs
+v2fly_geosite-supercell.srs
 
 ### MetaCX_GEOIP ###
 
