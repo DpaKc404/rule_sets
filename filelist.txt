@@ -1,83 +1,82 @@
 ### AntiFilter_GEOSITE ###
-geosite-antifilter.srs
 geosite-antifilter-community.srs
+geosite-antifilter.srs
 
 ### V2fly_GEOIP ###
 v2fly_geoip-cloudflare.srs
+v2fly_geoip-cloudfront.srs
+v2fly_geoip-telegram.srs
 v2fly_geoip-google.srs
 v2fly_geoip-private.srs
-v2fly_geoip-cloudfront.srs
+v2fly_geoip-fastly.srs
 
 ### V2fly_GEOSITE ###
+v2fly_geosite-akamai.srs
+v2fly_geosite-amazon.srs
+v2fly_geosite-amazontrust.srs
+v2fly_geosite-asus.srs
+v2fly_geosite-aws.srs
+v2fly_geosite-azure.srs
 v2fly_geosite-category-ads-all.srs
+v2fly_geosite-category-gov-ru.srs
+v2fly_geosite-category-media-ru.srs
+v2fly_geosite-category-ntp.srs
 v2fly_geosite-category-public-tracker.srs
-v2fly_geosite-cloudflare.srs
+v2fly_geosite-category-remote-control.srs
+v2fly_geosite-category-ru.srs
+v2fly_geosite-category-speedtest.srs
+v2fly_geosite-cdn77.srs
 v2fly_geosite-cloudflare-cn.srs
 v2fly_geosite-cloudflare-ipfs.srs
-v2fly_geosite-category-ntp.srs
-v2fly_geosite-category-remote-control.srs
-v2fly_geosite-category-speedtest.srs
+v2fly_geosite-cloudflare.srs
+v2fly_geosite-digitalocean.srs
+v2fly_geosite-discord.srs
+v2fly_geosite-ea.srs
+v2fly_geosite-fastly.srs
 v2fly_geosite-github.srs
 v2fly_geosite-github1s.srs
 v2fly_geosite-gitlab.srs
 v2fly_geosite-google.srs
-v2fly_geosite-speedtest.srs
-v2fly_geosite-tiktok.srs
-v2fly_geosite-whatsapp.srs
-v2fly_geosite-asus.srs
-v2fly_geosite-perplexity.srs
-v2fly_geosite-category-media-ru.srs
-v2fly_geosite-steam.srs
-v2fly_geosite-ea.srs
-v2fly_geosite-category-ru.srs
-v2fly_geosite-category-gov-ru.srs
-v2fly_geosite-private.srs
-v2fly_geosite-amazon.srs
-v2fly_geosite-amazontrust.srs
-v2fly_geosite-aws.srs
-v2fly_geosite-akamai.srs
-v2fly_geosite-discord.srs
-v2fly_geosite-telegram.srs
-v2fly_geosite-cdn77.srs
-v2fly_geosite-digitalocean.srs
-v2fly_geosite-fastly.srs
 v2fly_geosite-hetzner.srs
-v2fly_geosite-vultr.srs
-v2fly_geosite-azure.srs
 v2fly_geosite-oracle.srs
-v2fly_geosite-escapefromtarkov.srs
+v2fly_geosite-perplexity.srs
+v2fly_geosite-private.srs
+v2fly_geosite-speedtest.srs
+v2fly_geosite-steam.srs
+v2fly_geosite-telegram.srs
+v2fly_geosite-tiktok.srs
+v2fly_geosite-vultr.srs
+v2fly_geosite-whatsapp.srs
 
 ### MetaCX_GEOIP ###
 metacx_geoip-ru.srs
-metacx_geoip-telegram.srs
-metacx_geoip-fastly.srs
 
 ### MetaCX_GEOSITE ###
 
 ### Zkeen_GEOSITE ###
-zkeen_geosite-youtube.srs
 zkeen_geosite-domains.srs
 zkeen_geosite-other.srs
 zkeen_geosite-politic.srs
+zkeen_geosite-youtube.srs
 
 ### Zkeen_GEOIP ###
-zkeen_geoip-cloudflare.srs
-zkeen_geoip-youtube.srs
-zkeen_geoip-amazon.srs
 zkeen_geoip-akamai.srs
-zkeen_geoip-discord.srs
-zkeen_geoip-telegram.srs
+zkeen_geoip-amazon.srs
 zkeen_geoip-cdn77.srs
+zkeen_geoip-cloudflare.srs
+zkeen_geoip-colocrossing.srs
+zkeen_geoip-contabo.srs
 zkeen_geoip-digitalocean.srs
+zkeen_geoip-discord.srs
 zkeen_geoip-fastly.srs
 zkeen_geoip-gcore.srs
 zkeen_geoip-hetzner.srs
 zkeen_geoip-linode.srs
 zkeen_geoip-mega.srs
 zkeen_geoip-meta.srs
-zkeen_geoip-ovh.srs
-zkeen_geoip-vultr.srs
-zkeen_geoip-contabo.srs
-zkeen_geoip-scaleway.srs
-zkeen_geoip-colocrossing.srs
 zkeen_geoip-oracle.srs
+zkeen_geoip-ovh.srs
+zkeen_geoip-scaleway.srs
+zkeen_geoip-telegram.srs
+zkeen_geoip-vultr.srs
+zkeen_geoip-youtube.srs
