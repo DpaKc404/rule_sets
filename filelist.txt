@@ -49,7 +49,6 @@ v2fly_geosite-vultr.srs
 v2fly_geosite-whatsapp.srs
 
 ### MetaCX_GEOIP ###
-metacx_geoip-ru.srs
 
 ### MetaCX_GEOSITE ###
 
