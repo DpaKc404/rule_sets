@@ -132,7 +132,7 @@ echo ""
 
 # --- Remove temp folders and files ---
 
-rm -rf AntiFilter V2Fly Zkeen
+rm -rf AntiFilter V2Fly Zkeen MetaCubeX
 
 echo ""
 
@@ -254,6 +254,10 @@ for file in "${FILES[@]}"; do
 
 [ -z "$file" ] && continue
 
+# Пропускаем заголовки секций (начинаются и заканчиваются на ###)
+
+[[ "$file" =~ ^###.*### ]] && continue
+
 # Пропускаем zkeen_geoip-ru_second.srs и zkeen_geoip-ru_torrent.srs
 
 # (они будут созданы копированием)
@@ -343,6 +347,30 @@ COPIED=$((COPIED + 1))
 else
 
 echo "✗ v2fly_geoip-ru.srs not found, cannot create copies"
+
+MISSING=$((MISSING + 2))
+
+fi
+
+# Создаем дополнительные копии v2fly_geosite-category-doh.srs
+
+if [ -f "$PROJECT_ROOT/v2fly_geosite-category-doh.srs" ]; then
+
+cp "$PROJECT_ROOT/v2fly_geosite-category-doh.srs" "$PROJECT_ROOT/v2fly_geosite-category-doh_tcp.srs"
+
+echo "✓ Created v2fly_geosite-category-doh_tcp.srs"
+
+COPIED=$((COPIED + 1))
+
+cp "$PROJECT_ROOT/v2fly_geosite-category-doh.srs" "$PROJECT_ROOT/v2fly_geosite-category-doh_udp.srs"
+
+echo "✓ Created v2fly_geosite-category-doh_udp.srs"
+
+COPIED=$((COPIED + 1))
+
+else
+
+echo "✗ v2fly_geosite-category-doh.srs not found, cannot create copies"
 
 MISSING=$((MISSING + 2))
 
