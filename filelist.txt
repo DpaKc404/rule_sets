@@ -50,6 +50,10 @@ v2fly_geosite-tiktok.srs
 v2fly_geosite-vultr.srs
 v2fly_geosite-whatsapp.srs
 v2fly_geosite-netease.srs
+v2fly_geosite-category-doh.srs
+v2fly_geosite-roblox.srs
+v2fly_geosite-7tv.srs
+v2fly_geosite-escapefromtarkov.srs
 
 ### Zkeen_GEOSITE ###
 zkeen_geosite-domains.srs
