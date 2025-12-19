@@ -54,7 +54,7 @@ v2fly_geosite-category-doh.srs
 v2fly_geosite-roblox.srs
 v2fly_geosite-7tv.srs
 v2fly_geosite-escapefromtarkov.srs
-v2fly_geosite-rockstar
+v2fly_geosite-rockstar.srs
 
 ### Zkeen_GEOSITE ###
 zkeen_geosite-domains.srs
