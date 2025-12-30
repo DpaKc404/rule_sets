@@ -55,6 +55,9 @@ v2fly_geosite-roblox.srs
 v2fly_geosite-7tv.srs
 v2fly_geosite-escapefromtarkov.srs
 v2fly_geosite-rockstar.srs
+v2fly_geosite-microsoft.srs
+v2fly_geosite-category-web-archive.srs
+v2fly_geosite-kemono.srs
 
 ### Zkeen_GEOSITE ###
 zkeen_geosite-domains.srs
