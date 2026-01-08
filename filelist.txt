@@ -58,6 +58,7 @@ v2fly_geosite-rockstar.srs
 v2fly_geosite-microsoft.srs
 v2fly_geosite-category-web-archive.srs
 v2fly_geosite-kemono.srs
+v2fly_geosite-roblox.srs
 
 ### Zkeen_GEOSITE ###
 zkeen_geosite-domains.srs
