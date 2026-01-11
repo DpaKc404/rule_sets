@@ -87,3 +87,8 @@ zkeen_geoip-scaleway.srs
 zkeen_geoip-telegram.srs
 zkeen_geoip-vultr.srs
 zkeen_geoip-youtube.srs
+zkeen_geoip-azure.srs
+zkeen_geoip-bunnycdn.srs
+zkeen_geoip-leaseweb.srs
+zkeen_geoip-liquidweb.srs
+zkeen_geoip-google.srs
