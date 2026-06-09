@@ -82,11 +82,13 @@ zkeen_geoip-hetzner.srs
 zkeen_geoip-linode.srs
 zkeen_geoip-mega.srs
 zkeen_geoip-meta.srs
+zkeen_geoip-melbicom.srs
 zkeen_geoip-oracle.srs
 zkeen_geoip-ovh.srs
 zkeen_geoip-scaleway.srs
 zkeen_geoip-telegram.srs
 zkeen_geoip-vultr.srs
+zkeen_geoip-vodafone.srs
 zkeen_geoip-youtube.srs
 zkeen_geoip-azure.srs
 zkeen_geoip-bunnycdn.srs
