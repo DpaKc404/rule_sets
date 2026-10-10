@@ -97,3 +97,5 @@ zkeen_geoip-liquidweb.srs
 zkeen_geoip-google.srs
 zkeen_geoip-arelion.srs
 zkeen_geoip-frantech.srs
+zkeen_geoip-cogent.srs
+zkeen_geoip-datacamp.srs
